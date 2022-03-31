@@ -1,18 +1,49 @@
-const num = 266219;
-const numsArray = num.toString().split('');
+const lang = prompt("Выбор языка") === undefined ? 'ru' : 'en';
 
-let result = parseInt(numsArray[0]);
+const daysOfWeek = [
+    {'en': [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'
+    ]},
+    {'ru': [
+    'Понедельник',
+    'Вторник',
+    'Среда',
+    'Четверг',
+    'Пятница',
+    'Суббота',
+    'Воскресенье'
+    ]}];
 
-numsArray.forEach((letter, i) => {
 
-    if (i === numsArray.length - 1) return
-    else {
+if (lang === 'en') {
+    
+    console.log(...daysOfWeek[0]['en']);
+}
+else {
 
-        result *= numsArray[i + 1];
-    }
-});
+    console.log(...daysOfWeek[1]['ru']);
+}
 
-console.log('Result: ', result);
-console.log('Result in pow 3: ', resultInPow = result*result*result);
-console.log('First two numbers of result: ', String(result).slice(0,2));
-console.log('First two numbers of result in pow 3: ', String(resultInPow).slice(0,2));
+switch (lang) {
+
+    case 'ru': console.log(...daysOfWeek[1]['ru']);
+    break;
+    case 'en': console.log(...daysOfWeek[0]['en']);
+    break;
+    default: "Нет языка в списке"
+}
+
+
+//////////Second part/////////////
+const namePerson = prompt("Как вас зовут?");
+
+const rang = namePerson === "Артем" ? "директор" : 
+             namePerson === "Александр" ? "преподаватель" : "студент";
+
+console.log(rang);
