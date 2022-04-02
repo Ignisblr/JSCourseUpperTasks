@@ -20,6 +20,28 @@ const daysOfWeek = [
     'Воскресенье'
     ]}];
 
+const daysOfWeekArray = [
+
+    [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday'
+    ],
+    [
+        'Понедельник',
+        'Вторник',
+        'Среда',
+        'Четверг',
+        'Пятница',
+        'Суббота',
+        'Воскресенье'
+    ]
+    
+]
 
 if (lang === 'en') {
     
@@ -37,6 +59,11 @@ switch (lang) {
     case 'en': console.log(...daysOfWeek[0]['en']);
     break;
     default: "Нет языка в списке"
+}
+
+for (let dayIndex = 0; dayIndex < 7; dayIndex++) {
+
+    console.log(daysOfWeekArray[+(lang === 'ru')][dayIndex]);
 }
 
 
