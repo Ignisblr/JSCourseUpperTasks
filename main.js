@@ -1,4 +1,4 @@
-const lang = prompt("Выбор языка") === undefined ? 'ru' : 'en';
+const lang = prompt("Выбор языка") === (undefined || 'ru') ? 'ru' : 'en';
 
 const daysOfWeek = [
     {'en': [
@@ -61,10 +61,7 @@ switch (lang) {
     default: "Нет языка в списке"
 }
 
-for (let dayIndex = 0; dayIndex < 7; dayIndex++) {
-
-    console.log(daysOfWeekArray[+(lang === 'ru')][dayIndex]);
-}
+console.log(...daysOfWeekArray[+(lang === 'ru')]);
 
 
 //////////Second part/////////////
