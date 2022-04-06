@@ -1,73 +1,15 @@
-const lang = prompt("Выбор языка") === (undefined || 'ru') ? 'ru' : 'en';
+function getMessage(message) {
 
-const daysOfWeek = [
-    {'en': [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday'
-    ]},
-    {'ru': [
-    'Понедельник',
-    'Вторник',
-    'Среда',
-    'Четверг',
-    'Пятница',
-    'Суббота',
-    'Воскресенье'
-    ]}];
+    let result = typeof(message) !== 'string' ? alert('Сообщение должно передаваться в качестве строки') : message.trim();
 
-const daysOfWeekArray = [
+    if (result === undefined) return;
 
-    [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday'
-    ],
-    [
-        'Понедельник',
-        'Вторник',
-        'Среда',
-        'Четверг',
-        'Пятница',
-        'Суббота',
-        'Воскресенье'
-    ]
-    
-]
+    if (result.length > 30) {
 
-if (lang === 'en') {
-    
-    console.log(...daysOfWeek[0]['en']);
-}
-else {
+        result += '...';
+    }
 
-    console.log(...daysOfWeek[1]['ru']);
+    return result;
 }
 
-switch (lang) {
-
-    case 'ru': console.log(...daysOfWeek[1]['ru']);
-    break;
-    case 'en': console.log(...daysOfWeek[0]['en']);
-    break;
-    default: "Нет языка в списке"
-}
-
-console.log(...daysOfWeekArray[+(lang === 'ru')]);
-
-
-//////////Second part/////////////
-const namePerson = prompt("Как вас зовут?");
-
-const rang = namePerson === "Артем" ? "директор" : 
-             namePerson === "Александр" ? "преподаватель" : "студент";
-
-console.log(rang);
+console.log(getMessage(false));
